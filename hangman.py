@@ -31,7 +31,7 @@ while not end_of_game:
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
         lives -= 1
         print(stages[lives + 1])
-        if lives == 0:
+        if lives < 0:
             end_of_game = True
             print(f"You lose. The answer was {chosen_word}.")
 
