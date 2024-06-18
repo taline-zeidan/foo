@@ -29,7 +29,7 @@ def play():
     print(logo)
     print("Welcome to the Number Guessing Game!")
     print("I'm thinking of a number between 1 and 100.")
-    print(f"psssttt it's {random_nb}")
+    # print(f"psssttt it's {random_nb}")
     attempts =  choose_difficulty()
     user_guess = 0
     while user_guess != random_nb:
