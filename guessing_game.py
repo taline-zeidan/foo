@@ -39,6 +39,7 @@ def play():
 
        if attempts == 0:
           print("You've run out of guesses. You lose.")
+          print(f"It was {random_nb}. Do better.")
           return
        elif user_guess != random_nb:
           print("Guess again.")
