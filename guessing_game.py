@@ -21,7 +21,10 @@ def choose_difficulty():
 def get_guess():
     while True:
         try:
-            return int(input("Make a guess: "))
+            guess=int(input("Make a guess: "))
+            if guess < 1 or guess > 100:
+                raise ValueError
+            return guess
         except ValueError:
             print("Please enter a valid number.")
 def play():
