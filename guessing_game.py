@@ -1,15 +1,15 @@
 from guessing_art import logo
 import random
 
-def update_attempts():
+def update_attempts(user_guess, random_nb, attempts):
     if user_guess > random_nb:
         print("Too high.")
         return attempts - 1
-    elif guess < answer:
+    elif user_guess < random_nb:
         print("Too low.")
         return attempts - 1
     else:
-        print(f"You got it! The answer was {answer}.")
+        print(f"You got it! The answer was {random_nb}.")
 def choose_difficulty():
     difficulty = input("Choose a difficulty. Type 'easy' or 'hard':")
     while difficulty.lower() != 'easy' and difficulty.lower() != 'hard':
@@ -18,6 +18,12 @@ def choose_difficulty():
         return 10
     elif difficulty.lower() == 'hard':
         return 5     
+def get_guess():
+    while True:
+        try:
+            return int(input("Make a guess: "))
+        except ValueError:
+            print("Please enter a valid number.")
 def play():
     random_nb= random.randint(1,100)
     print(logo)
@@ -28,7 +34,7 @@ def play():
     user_guess = 0
     while user_guess != random_nb:
        print(f"You have {attempts} attempts remaining to guess the number.")
-       user_guess = int(input("Make a guess: "))
+       user_guess = get_guess()
        attempts = update_attempts(user_guess, random_nb, attempts)
 
        if attempts == 0:
@@ -36,4 +42,4 @@ def play():
           return
        elif user_guess != random_nb:
           print("Guess again.")
-          
+play()       
