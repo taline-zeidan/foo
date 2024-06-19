@@ -45,7 +45,6 @@ def play_game():
     game_should_continue = True
     while game_should_continue:
         clear()
-        print(logo)
         print(f"Compare A: {person_a}")
         print(vs)
         print(f"Against B: {person_b}")
